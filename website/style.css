@@ -7,8 +7,8 @@ body{
     display: grid;
     /* grid-template-columns:  */
     height:100vh;
-    background: #f23557;
-    color: #f0d43a;
+    background: #ADD8E6;
+    color: #000080;
     justify-content: center;
     grid-gap: 1em;
     font-size: 20px;
@@ -24,21 +24,30 @@ body{
 }
 
 #date{
-
+    color: #FFFFFF;
+    text-align: center;
 }
 
 #temp{
-
+    color: #FFFFFF;
+    text-align: center;
 }
 
 #content{
-
+    color: #FFFFFF;
+    text-align: center;
 }
 
+#name{
+    color: #FFFFFF;
+    text-align: center;
+}
 .headline {
 
 }
 .title{
+    color: #22b2da;
+    text-align: center;
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */

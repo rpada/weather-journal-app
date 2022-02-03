@@ -42,7 +42,9 @@ function addData(req,res){
     newEntry = {
     temp: req.body.temp,
     date: req.body.date,
-    feelings: req.body.feelings
+    feelings: req.body.feelings,
+    name: req.body.name,
+    description: req.body.description
     }
   
     projectData.push(newEntry)
