@@ -19,10 +19,6 @@ body{
     background: blue;
 }
 
-#entryHolder{
-
-}
-
 #date{
     color: #FFFFFF;
     text-align: center;
@@ -41,9 +37,6 @@ body{
 #name{
     color: #FFFFFF;
     text-align: center;
-}
-.headline {
-
 }
 .title{
     color: #22b2da;

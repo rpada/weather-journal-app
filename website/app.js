@@ -5,6 +5,7 @@ const d = new Date();
 const month = d.getMonth() + 1
 const newDate = month +'.'+ d.getDate()+'.'+ d.getFullYear();
 
+// from https://classroom.udacity.com/nanodegrees/nd0011/parts/cd0429/modules/d153872b-b417-4f32-9c77-d809dc21581d/lessons/ls1846/concepts/211c2a41-4ab7-48ea-94cc-b44b2e4363c4
 const baseURL = 'http://api.openweathermap.org/data/2.5/weather?units=imperial&zip=' //api call
 const apiKey = '&APPID=8c5af97b42baa34ed4df398ff2a007e3'; // my personal API key
 
@@ -21,7 +22,7 @@ function performAction(e){
   getData(baseURL , zipCode , apiKey )
   .then (function(data) {
       postData('/addData' ,{temp:data.main.temp , name: data.name, description:data.weather[0].description, date:newDate, feelings: feelings} )
-  }).then(()=>
+  }).then(()=> // https://classroom.udacity.com/nanodegrees/nd0011/parts/cd0429/modules/d153872b-b417-4f32-9c77-d809dc21581d/lessons/ls1846/concepts/06b6f9e9-221f-4668-8d13-a70346b293d2
       updateUI()
   )};
   
@@ -41,6 +42,7 @@ const getData = async (baseURL, zipCode, apiKey)=>{
 }
 
 // post the data
+// from https://classroom.udacity.com/nanodegrees/nd0011/parts/cd0429/modules/d153872b-b417-4f32-9c77-d809dc21581d/lessons/ls1845/concepts/3726b76d-b5c9-4c51-b945-7f1a611a2cb4
 const postData = async ( url = '', data = {}) => {
 
     const response = await fetch(url, {
@@ -49,13 +51,7 @@ const postData = async ( url = '', data = {}) => {
         headers: {
             'Content-Type' : 'application/json',
         },
-        body: JSON.stringify({
-          name: data.name,
-          temp: data.temp,
-          date: data.date,
-          feelings: data.feelings,
-          description: data.description
-      })
+        body: JSON.stringify(data)
     });
 
 try {

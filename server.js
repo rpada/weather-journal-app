@@ -17,7 +17,7 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
 
-
+// https://classroom.udacity.com/nanodegrees/nd0011/parts/cd0429/modules/d153872b-b417-4f32-9c77-d809dc21581d/lessons/ls1844/concepts/3bb6ade1-5c06-4690-8ade-33e070f61b67
 // Setup Server
 const port = 8000;
 
@@ -29,6 +29,7 @@ function listening(){
 }
 
 // Respond with JS object when a GET request is made to the homepage
+// from https://classroom.udacity.com/nanodegrees/nd0011/parts/cd0429/modules/d153872b-b417-4f32-9c77-d809dc21581d/lessons/ls1845/concepts/4fde0cb6-05ce-45c0-a9ba-5c996b3eb63a
 app.get('/all', function (req, res) {
   res.send(projectData)
 })
@@ -50,5 +51,4 @@ function addData(req,res){
     projectData.push(newEntry)
     console.log(projectData)
     res.send(projectData)
-    //console.log(projectData)
-  }
+}
