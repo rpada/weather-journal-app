@@ -23,7 +23,7 @@ function performAction(e){
   .then (function(data) {
       postData('/addData' ,{temp:data.main.temp , name: data.name, description:data.weather[0].description, date:newDate, feelings: feelings} )
   }).then(()=> // https://classroom.udacity.com/nanodegrees/nd0011/parts/cd0429/modules/d153872b-b417-4f32-9c77-d809dc21581d/lessons/ls1846/concepts/06b6f9e9-221f-4668-8d13-a70346b293d2
-      updateUI()
+      dynamicUI()
   )};
   
 // GET data from API function
@@ -63,7 +63,8 @@ try {
 }
 }
 // from https://classroom.udacity.com/nanodegrees/nd0011/parts/cd0429/modules/d153872b-b417-4f32-9c77-d809dc21581d/lessons/ls1846/concepts/06b6f9e9-221f-4668-8d13-a70346b293d2
-const updateUI = async() => {
+// and https://review.udacity.com/#!/rubrics/4671/view
+const dynamicUI = async() => {
   const request = await fetch('/all');
   try {
       const allData = await request.json();
@@ -72,7 +73,7 @@ const updateUI = async() => {
       // update new entry values
           document.getElementById('name').innerHTML = last.name + ":" + " " + last.description;
           document.getElementById('date').innerHTML = "Today's date is" + " " + last.date;
-          document.getElementById('temp').innerHTML = "The temperature is" + " " + last.temp + " " + "Fahrenheit";
+          document.getElementById('temp').innerHTML = "The temperature is" + " " + last.temp + " " + "degrees Fahrenheit";
           document.getElementById('content').innerHTML = "You are feeling" + " " + last.feelings;
       
   } catch (error) {
